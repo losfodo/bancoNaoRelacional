@@ -1,4 +1,4 @@
-db.estados.insert({   //criar dentro de estados um novo estado
+*db.estados.insert({   //criar dentro de estados um novo estado
     nome: "São Paulo",     //dados estado nome são Paulo..
     sigla: "SP",
     regiao: "Sudeste",

@@ -1,6 +1,6 @@
-db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})   //estados=nome da colection,criando um dado sem coleção q não existe é possivel, usa json ou notação de objeto
-db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})   //banco sem esquema pode criar atributos extras se quiser como populçao q n tem primeiro estado
-db.estados.insert({     //apertando enter neste momento e criando colections com os dados abaixo com inserção..
+*db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})   //estados=nome da colection,criando um dado sem coleção q não existe é possivel, usa json ou notação de objeto
+*db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})   //banco sem esquema pode criar atributos extras se quiser como populçao q n tem primeiro estado
+*db.estados.insert({     //apertando enter neste momento e criando colections com os dados abaixo com inserção..
     nome: "Rio de Janeiro",   //dados...
     sigla: "RJ",
     regiao: "Sudeste",
@@ -11,7 +11,7 @@ db.estados.insert({     //apertando enter neste momento e criando colections com
     }]
 })
 
-db.estados.find()   //mostra todos os colection estados criados com os dados dentro tudo junto
-db.estados.find().pretty()   //mostras todos colections estados o banco de dados ou qual nome banco de dados com dados e tudo organizados num formato mais json mais visivel util
-db.help()   //mostra possibilidades para usar de codigo
-db. tecla tab    //mais comandos para usar de mongoDb
+*db.estados.find()   //mostra todos os colection estados criados com os dados dentro tudo junto
+*db.estados.find().pretty()   //mostras todos colections estados o banco de dados ou qual nome banco de dados com dados e tudo organizados num formato mais json mais visivel util
+*db.help()   //mostra possibilidades para usar de codigo
+*db. tecla tab    //mais comandos para usar de mongoDb
