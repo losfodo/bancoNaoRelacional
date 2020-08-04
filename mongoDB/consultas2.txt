@@ -1,0 +1,9 @@
+db.estados.aggregate([   //consulta de agregação...
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0} }   //usando project '$=significativo'{o que tiver 1 é o que quer consultar e 0 o que nao quer q saia na tela p consulta}
+])
+
+db.estados.aggregate([
+    { $project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao" }} },
+    { $project: { _id: 0, populacaoTotal: 1 } },
+])

@@ -1,0 +1,10 @@
+db.estados.find()
+db.estados.find().pretty()
+db.estados.findOne()   //pega o primeiro q encontrar de uma id com dados no banco de dados salvo..nao muito util
+db.estados.findOne({sigla: "RJ"})   //pegar um objeto cuja sigla RJ procuras especificas encontra dados sobre
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()   //or de ou chama se tiver dados de RJ E AC(se fosse and seria vazio se nao tivesse um e outro juntos), possivel usar pretty para vir mais visivel no mongoDB
+db.estados.find({populacao: {$exists: true}}).pretty()   //trazer todos q possuem atributo populacao no caso cidades dentro do banco de dados estados..
+db.estados.find().skip(1).limit(2)   //pula o primeiro cadastro com id com skip(1) e mostra os dois primeiros com limit(2)
+db.estados.count()   //mostra quantos registro tem dentro da collection banco de dados...
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})   //encontra um dado especifico com sigla SP e segundo parametro{objetos de dados q quer trazer nessa consulta especifica coloca 1 e o que nao quer q vem sempre o id coloca=0}
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0})   //encontrar com SP e todas as cidades apenas o nome do estado de SP

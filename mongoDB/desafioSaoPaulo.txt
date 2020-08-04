@@ -1,0 +1,21 @@
+db.estados.insert({   //criar dentro de estados um novo estado
+    nome: "São Paulo",     //dados estado nome são Paulo..
+    sigla: "SP",
+    regiao: "Sudeste",
+    cidades: [{          //array de cidades abaixo..,,cidade deste estado..
+        _id: ObjectId(),          //cria um id de cidade gera rash id diferente um do outro de numerosletras de campinas
+        nome: "Campinas",
+        area: 795.7,
+        prefeito: "Jonas Donizette",
+        populacao: 1081000
+    }, {       //fecha primeiro objt } e abre novo objt{
+        _id: ObjectId(),   //esse novo objt tbm tem um id novo de garulhos
+        nome: "Garulhos",
+        populacao: 1325000
+    }, {
+        _id: ObjectId(),      //msm q acima,, Cada Cidade tem o atributo _id <- ObjectId
+        nome: "Sorocaba",
+        distanciaCapital: 87,
+        populacao: 644919
+    }]
+})     //fechando tudo.. e clica enter

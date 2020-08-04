@@ -1,0 +1,25 @@
+++++++++++++terminal++++++++++++
+*Mongod    :processo q fica executando banco de dados avisando em que porta esta conectada 27017
+tecla windows + R  : aparece cmd prompt de comando na tela inicial msm
+*mongo   :ver se mongoDB esta funcionando e entrar
+
+mongo -version  :mostra qual versão do mongo estouy usando
+help   :mostra opçoes de comandos para ajudar
+cls    :para limpar a tela apenas
+show dbs
+*use wm   : cria banco de dados wm=webmoderno onde muda para banco de dados wm mas se der show dbs nao mostra na listra pq não tem nenhum dado
+show dbs   : mostra todos os bancos de dados disponiveis exemplo use wm se tiver uma collections pelo menos
+db.createCollection('estados')   :criar uma coleção com nome estados(estados banco de dados q sera usado como exemplo) dentro de wm o banco de dados q agora é visivel com show dbs
+db. tab  tab   :mostra tudo que tem arquivo e outros a disposição para ser usado dentro da api mongoDB
+show dbs   :
+show collections   :mostra todas as colections como ex: estados e Estados q esta em wm
+db.createCollection('Estados')   :com E maiusculo cria duas collections diferentes dentro de wm pq é caseSensitive
+show collections
+db.Estados.drop()    :exclui esta tabela Estados
+show collections
+db.nomedobancodedados.drop()  :nome do banco de dados tipo estados q foi criado antes
+show collections
+show dbs
+
+
+

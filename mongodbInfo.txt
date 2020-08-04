@@ -1,0 +1,14 @@
+++++++++instalação mongoDB+++++++++++++++++
+*mongo     :funciona com documento e usa json é banco não relacional e sem schema aleatorio, nao usa sql e sim api
+*criar pasta em C: de computador nome 'data' dentro pasta nome 'db'  : onde vai ficar salvo os arquivos mongoDB
+*ir pasta arquivos de programas em C:+mongoDB+server+bin+clicar no arquivo exe mongod
+*meu computador botão direito propriedades + variaveis de hambiente + path + editar + novo cola caminho url="C:+mongoDB+server+bin" e ok
+*vai no cmd=prompt de comando digitar mongod  : conectando e funcionando mongodb e mostrando a porta 'no caso não mostrou???'
++++++++++terminal mongo++++++++++++++++
+*tecla windows + R  : aparece cmd prompt de comando
+*mongo   :ver se mongoDB esta funcionando
+
+
+
+
+
