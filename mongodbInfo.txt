@@ -6,7 +6,7 @@
 *vai no cmd=prompt de comando digitar mongod  : conectando e funcionando mongodb e mostrando a porta 'no caso não mostrou???'
 +++++++++terminal mongo++++++++++++++++
 *tecla windows + R  : aparece cmd prompt de comando
-*mongo   :ver se mongoDB esta funcionando
+*mongo   :ver se mongoDB esta funcionando terminal
 
 
 
