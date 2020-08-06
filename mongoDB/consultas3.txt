@@ -1,0 +1,6 @@
+*db.estados.aggregate([   //consultando..
+    { $match: {"cidades.nome": "Sorocaba"} },   //para encontrar com match o que esta conectado com sorocaba q é estado sao paulo com todas as cidades
+    { $unwind: "$cidades"},   //consulta saindo estado mais cidade e repitindo em todas as cidades q deixa de ser array e vira objeto visualmente...
+    { $match: {"cidades.nome": "Sorocaba"} },   //agora só sai a cidade de sorocaba com estado sp apenas com sigla e população completo junto..
+    { $project: {_id: "$cidades._id"} }   //mostra apenas o id da cidade de sorocaba por q em cima influencia..
+]).pretty()  //para ver de forma json as consultas 

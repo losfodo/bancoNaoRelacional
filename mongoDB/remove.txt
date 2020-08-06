@@ -1,0 +1,16 @@
+*db.estados.count()   //mostra a quantidade de registro na coleção de estados.. no caso 4
+
+*db.estados.remove({sigla: "AC"})  //remove AC no caso acre do registro
+*db.estados.count()   //diminuindo a contagem de estados para 3
+*db.estados.find()   //consulta de todos estados com dados..
+
+*cls   //limpar a tela com dados..
+
+*db.estados.remove({populacao: {$exists: true}}, 1)   //remove ou exclui apenas um registro de estado q tenha população nos dados,1),,,mesmo tendo mais de um
+*db.estados.count()
+*db.estados.find()
+
+*db.estados.update({sigla: "RJ"}, {$set: {populacao: 16720000}})   //atualiza estado de RJ com população
+
+*db.estados.remove({populacao: {$lt: 20000000}})   //excluir estados q possuem a população menor q $lt: 20000000 no caso exclui o RJ, $lt=menos q..
+*db.estados.find()

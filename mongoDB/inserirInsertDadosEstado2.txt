@@ -1,4 +1,4 @@
-*db.estados.insert({   //criar dentro de estados um novo estado
+*db.estados.insert({   //criar dentro de estados um novo estado,,, parece q automaticamente estado SP cria uma id propria para o estado em si..
     nome: "São Paulo",     //dados estado nome são Paulo..
     sigla: "SP",
     regiao: "Sudeste",

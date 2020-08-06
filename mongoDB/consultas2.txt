@@ -1,9 +1,13 @@
-db.estados.aggregate([   //consulta de agregação...
-    { $project: {nome: 1, "cidades.nome": 1, _id: 0} }   //usando project '$=significativo'{o que tiver 1 é o que quer consultar e 0 o que nao quer q saia na tela p consulta}
-])
+*db.estados.aggregate([   //consulta de agregação...
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0} }   //usando project '$=significativo'{projetar dentro chaves..o que tiver 1 é o que quer consultar e 0 o que nao quer q saia na tela p consulta}
+])     // saindo nome de todos estados e cidades
 
-db.estados.aggregate([
-    { $project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
-    { $group: {_id: null, populacaoTotal: {$sum: "$populacao" }} },
-    { $project: { _id: 0, populacaoTotal: 1 } },
+*quit()   //para sair  do cliente ou da consulta acima banco de dados do mongo e voltar pro terminal
+*mongo   //do terminal volta para o mongo de novo onde não esta selecionado nenhum banco de dados como o wm criado antes como exemplos
+*use wm   //entra no banco wm onde é possivel fazer as consultas e criar mais collections dados...
+
+*db.estados.aggregate([   //consulta..
+    { $project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },   //somar população de todas as cidades de cada estados com totas soma em sp RJ ...,trazer sigla1 e não o id0
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao" }} },  //agrupar somatorio população de todas as cidades agora juntas total,id nulo=indicando q total sera tudo junto não importantando qual cidade é de quem.. dados acima de sigla continuam..   
+    { $project: { _id: 0, populacaoTotal: 1 } },   //coloca esse novo project para não mostrar q id é nulo na saida apenas a populaçãoTotal
 ])

@@ -1,0 +1,47 @@
+*db.empresas.aggregate([   // abri pipeline de agregação... criando uma consulta.
+    {$match: {nome: "Bradesco"}},   //match fazer relação com estadoid q é diferente do id de bradesco
+    {$lookup: {   //fazer o lookup usando estadoid.. atributos lookup abaixo..
+        from: "estados",   //
+        localField: "estadoId",   //localField q pertence a empresa bradesco no caso estadoid
+        foreignField: "_id",   //foreignField pertence a estados ou SP.. onde vai ser feito o match onde vai juntar ambos
+        as: "estado"   //nome do atributo q sera criado q sera estado
+    }},     //até aqui saindo Bradesco dados SP dados e cidade dados..
+    {$unwind: "$estado"},   //colocando unwind fica "estado" pra fora em um array nao muda muito para consulta...
+]).pretty()   //visualmente mais bonito de ver no terminal
+
+
+*db.empresas.aggregate([   // abri pipeline de agregação... criando uma consulta.
+    {$match: {nome: "Bradesco"}},   //match fazer relação com estadoid q é diferente do id de bradesco
+    {$lookup: {   //fazer o lookup usando estadoid.. atributos lookup abaixo..
+        from: "estados",   //
+        localField: "estadoId",   //localField q pertence a empresa bradesco no caso estadoid
+        foreignField: "_id",   //foreignField pertence a estados ou SP.. onde vai ser feito o match onde vai juntar ambos
+        as: "estado"   //nome do atributo q sera criado q sera estado
+    }}    //até aqui saindo Bradesco dados SP dados e cidade dados..
+
+
+    *db.empresas.aggregate([   // abri pipeline de agregação... criando uma consulta.
+    {$match: {nome: "Vale"}},   //match fazer relação com cidadeid q é diferente do id de Vale e diferente do estados id de cima...
+    {$lookup: {   //fazer o lookup usando estadoid.. atributos lookup abaixo..
+    from: "estados",   //mas cidadeid ta dentro de estados então mantem estados..
+    localField: "cidadeId", // fazendo conecção id de Vale e cidade em si...
+    foreignField: "cidade_id",
+    as: "estado"  //resultado sera estado..
+     }},
+     {$unwind: "$estado"},   //colocando unwind fica "estado" pra fora em um array nao muda muito para consulta...
+     {$unwind: "$estado.cidades"},   //ja com 2 unwind e este em especifico faz uma consulta de cada cidade estado e Vale mesmo objetoid 
+]).pretty()   //visualmente mais bonito de ver no terminal
+
+
+*db.empresas.aggregate([   // abri pipeline de agregação... criando uma consulta.
+    {$match: {nome: "Vale"}},   //match fazer relação com cidadeid q é diferente do id de Vale e diferente do estados id de cima...
+    {$lookup: {   //fazer o lookup usando estadoid.. atributos lookup abaixo..
+    from: "estados",   //mas cidadeid ta dentro de estados então mantem estados..
+    localField: "cidadeId", // fazendo conecção id de Vale e cidade em si...
+    foreignField: "cidade_id",
+    as: "estado"  //resultado sera estado..
+     }},
+     {$unwind: "$estado"},   //colocando unwind fica "estado" pra fora em um array nao muda muito para consulta...
+     {$unwind: "$estado.cidades"},   //ja com 2 unwind e este em especifico faz uma consulta de cada cidade estado e Vale mesmo objetoid 
+     {$addFields: {mesmaCidade:{$cmp: "["$estado.cidades._id", "$cidadeId"}}},   //criar um atributo a mais mesmaCidade q compara dois valores "$estado.cidades._id", "$cidadeId"
+]).pretty()   //visualmente mais bonito de ver no terminal,,, saindo mesmaCidade:0 vai ser a cidade q esta procurando...

@@ -1,0 +1,10 @@
+*db.estados.update({sigla: "SP"},{$set: {populacao: 45340000}})   //fazer um update no estado de SP, set=colocar atributo população em SP q não tinha antes..
+
+*db.estados.update({sigla: "AL"},{$set: {cidades: [{nome: "Sergipe"}]}})   //coloca cidade de sergipe em estado AL alagoas colocando + dados..
+
+*db.estados.update(   //colocando mais dados..
+    {sigla: "SP"},   //filtro em sao paulo..
+    {$push: {cidades: {nome: "Santos", populacao: 433966}}}  //faz push adicionando mais uma cidade sem id de santos com população dentro estado SP
+)
+
+*db.estados.find({populacao: {$exists: true}}, {_id: 0, nome: 1})  //trazer apenas os estados q possui população 'exist',sem id mas com nome

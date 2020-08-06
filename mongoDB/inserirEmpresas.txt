@@ -1,0 +1,14 @@
+*db.estados.find().pretty()   //mostra os estados banco de dados,, no estado de SP faz ctrl c em id do estado de SP junto com aspas duplas "idcodigo" para colocar no id da empresa quando fizer um insert
+
+*db.empresas.insert({   //inserindo ou colocando no banco de dados com nome empresas..
+    nome: "Bradesco",   //nome da empresa..
+    estadoId: ObjectId(ctrl V id estado SP)   //estadoId:coloca um id usando ctrl C + ctrl V do estado de SP criando um id de letras e numeros diferente de SP mas relacionados..
+    })   //clica enter para inserir tudo..
+
+*db.empresas.find().pretty()
+
+*db.empresas.insert({
+nome: "Vale",
+estadoId: ObjectId("ctrl V id cidade Sorocaba")   //agora pegou objectId de uma cidade de SP q é sorocaba
+ })
+
